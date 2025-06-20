@@ -93,11 +93,11 @@ export default function ContactSection() {
         
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, x: -50, rotateY: -15 }}
+            animate={isInView ? { opacity: 1, x: 0, rotateY: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="project-card p-8 rounded-2xl bg-white text-gray-900">
+            <div className="project-card p-8 rounded-2xl bg-white text-gray-900 card-3d">
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
               
               <div className="space-y-6">
@@ -157,11 +157,11 @@ export default function ContactSection() {
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            initial={{ opacity: 0, x: 50, rotateY: 15 }}
+            animate={isInView ? { opacity: 1, x: 0, rotateY: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="project-card p-8 rounded-2xl bg-white text-gray-900">
+            <div className="project-card p-8 rounded-2xl bg-white text-gray-900 card-3d">
               <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>

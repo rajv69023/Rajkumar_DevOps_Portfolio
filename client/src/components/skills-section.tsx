@@ -51,11 +51,11 @@ export default function SkillsSection() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Technical Skills */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, x: -50, rotateY: -15 }}
+            animate={isInView ? { opacity: 1, x: 0, rotateY: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="project-card p-8 rounded-2xl shadow-lg">
+            <div className="project-card p-8 rounded-2xl shadow-lg skill-card-3d">
               <h3 className="text-2xl font-bold text-gray-900 mb-8">Core Technologies</h3>
               <div className="space-y-6">
                 {skills.map((skill, index) => (
@@ -89,11 +89,11 @@ export default function SkillsSection() {
           
           {/* Technology Stack */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            initial={{ opacity: 0, x: 50, rotateY: 15 }}
+            animate={isInView ? { opacity: 1, x: 0, rotateY: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="project-card p-8 rounded-2xl shadow-lg">
+            <div className="project-card p-8 rounded-2xl shadow-lg skill-card-3d">
               <h3 className="text-2xl font-bold text-gray-900 mb-8">Technology Stack</h3>
               
               <div className="mb-8">
@@ -102,11 +102,21 @@ export default function SkillsSection() {
                   {cloudPlatforms.map((platform, index) => (
                     <motion.div
                       key={platform.name}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                      transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      className={`text-center p-4 bg-gradient-to-br ${platform.color} rounded-lg cursor-pointer`}
+                      initial={{ opacity: 0, scale: 0.8, rotateY: -20 }}
+                      animate={isInView ? { opacity: 1, scale: 1, rotateY: 0 } : {}}
+                      transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+                      whileHover={{ 
+                        scale: 1.15, 
+                        rotate: [0, 5, -5, 0],
+                        rotateX: 15,
+                        rotateY: 10,
+                        transition: { duration: 0.3 }
+                      }}
+                      className={`text-center p-4 bg-gradient-to-br ${platform.color} rounded-lg cursor-pointer tilt-3d`}
+                      style={{
+                        transformStyle: 'preserve-3d',
+                        boxShadow: '0 8px 25px rgba(0, 0, 0, 0.1)'
+                      }}
                     >
                       <i className={`${platform.icon} text-3xl mb-2`}></i>
                       <p className="text-sm font-medium text-gray-700">{platform.name}</p>
@@ -121,11 +131,21 @@ export default function SkillsSection() {
                   {devopsTools.map((tool, index) => (
                     <motion.div
                       key={tool.name}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                      transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      className={`text-center p-3 bg-gradient-to-br ${tool.color} rounded-lg cursor-pointer`}
+                      initial={{ opacity: 0, scale: 0.8, rotateX: -30 }}
+                      animate={isInView ? { opacity: 1, scale: 1, rotateX: 0 } : {}}
+                      transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                      whileHover={{ 
+                        scale: 1.2, 
+                        rotate: [0, -10, 10, 0],
+                        rotateX: 20,
+                        rotateY: 15,
+                        transition: { duration: 0.4 }
+                      }}
+                      className={`text-center p-3 bg-gradient-to-br ${tool.color} rounded-lg cursor-pointer tilt-3d`}
+                      style={{
+                        transformStyle: 'preserve-3d',
+                        boxShadow: '0 6px 20px rgba(0, 0, 0, 0.1)'
+                      }}
                     >
                       <i className={`${tool.icon} text-2xl mb-2`}></i>
                       <p className="text-xs font-medium text-gray-700">{tool.name}</p>

@@ -81,10 +81,17 @@ export default function ProjectsSection() {
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="project-card rounded-2xl shadow-lg overflow-hidden"
+              initial={{ opacity: 0, y: 50, rotateX: -20, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, y: 0, rotateX: 0, scale: 1 } : {}}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              whileHover={{
+                rotateX: 5,
+                rotateY: 5,
+                scale: 1.03,
+                transition: { duration: 0.4 }
+              }}
+              className="project-card rounded-2xl shadow-lg overflow-hidden card-3d"
+              style={{ transformStyle: 'preserve-3d' }}
             >
               <img 
                 src={project.image} 

@@ -6,18 +6,22 @@ import ProjectsSection from "@/components/projects-section";
 import ExperienceSection from "@/components/experience-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
+import ThreeDBackground from "@/components/3d-background";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ExperienceSection />
-      <ContactSection />
-      <Footer />
+    <div className="min-h-screen relative">
+      <ThreeDBackground />
+      <div className="relative z-10">
+        <Navigation />
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ExperienceSection />
+        <ContactSection />
+        <Footer />
+      </div>
     </div>
   );
 }
