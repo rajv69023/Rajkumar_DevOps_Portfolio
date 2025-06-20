@@ -23,6 +23,14 @@ export default function Footer() {
               <i className="fab fa-linkedin"></i>
             </motion.a>
             <motion.a
+              href="https://github.com/rajv69023"
+              target="_blank"
+              whileHover={{ scale: 1.1 }}
+              className="text-gray-400 hover:text-blue-400 transition-colors text-2xl"
+            >
+              <i className="fab fa-github"></i>
+            </motion.a>
+            <motion.a
               href="mailto:rajv69023@gmail.com"
               whileHover={{ scale: 1.1 }}
               className="text-gray-400 hover:text-blue-400 transition-colors text-2xl"

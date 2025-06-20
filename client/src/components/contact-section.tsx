@@ -67,6 +67,13 @@ export default function ContactSection() {
       color: "from-blue-600 to-blue-700"
     },
     {
+      label: "GitHub",
+      value: "github.com/rajv69023",
+      href: "https://github.com/rajv69023",
+      icon: "fab fa-github",
+      color: "from-gray-600 to-gray-800"
+    },
+    {
       label: "Location",
       value: "Haryana, Hisar, 125001",
       href: null,

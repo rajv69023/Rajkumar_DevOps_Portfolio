@@ -157,6 +157,14 @@ export default function HeroSection() {
                   <i className="fab fa-linkedin"></i>
                 </motion.a>
                 <motion.a
+                  href="https://github.com/rajv69023"
+                  target="_blank"
+                  whileHover={{ scale: 1.1 }}
+                  className="text-3xl text-blue-400 hover:text-blue-300 transition-colors"
+                >
+                  <i className="fab fa-github"></i>
+                </motion.a>
+                <motion.a
                   href="mailto:rajv69023@gmail.com"
                   whileHover={{ scale: 1.1 }}
                   className="text-3xl text-blue-400 hover:text-blue-300 transition-colors"

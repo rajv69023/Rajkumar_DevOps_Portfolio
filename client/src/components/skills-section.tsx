@@ -6,12 +6,79 @@ export default function SkillsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const skills = [
-    { name: "AWS Cloud Services", level: 95, icon: "fab fa-aws", color: "text-orange-500" },
-    { name: "Docker & Containerization", level: 90, icon: "fab fa-docker", color: "text-blue-500" },
-    { name: "Kubernetes Orchestration", level: 85, icon: "fas fa-dharmachakra", color: "text-blue-600" },
-    { name: "Terraform IaC", level: 88, icon: "fas fa-cube", color: "text-purple-500" },
-    { name: "CI/CD Pipelines", level: 92, icon: "fas fa-code-branch", color: "text-green-500" },
+  const skillCategories = [
+    {
+      category: "Linux Skills",
+      description: "Troubleshooting, Linux administration, monitoring systems, managing services, file and software/package management, understanding the Linux boot process",
+      level: 90,
+      icon: "fab fa-linux",
+      color: "from-gray-500 to-gray-700",
+      items: ["System Administration", "Process Management", "Package Management", "Boot Process", "File Systems", "Network Configuration"]
+    },
+    {
+      category: "Programming & Scripting",
+      description: "Python development and Shell scripting for automation and DevOps workflows",
+      level: 85,
+      icon: "fab fa-python",
+      color: "from-blue-500 to-yellow-500",
+      items: ["Python", "Bash/Shell Scripting", "Automation Scripts", "Infrastructure Automation"]
+    },
+    {
+      category: "Cloud Platforms",
+      description: "AWS, Google Cloud Platform (GCP), Microsoft Azure with hands-on experience",
+      level: 95,
+      icon: "fas fa-cloud",
+      color: "from-blue-400 to-purple-600",
+      items: ["AWS (Primary)", "Google Cloud Platform", "Microsoft Azure", "Multi-Cloud Architecture"]
+    },
+    {
+      category: "Containerization & Orchestration",
+      description: "Docker containerization and Kubernetes orchestration on GKE, EKS platforms",
+      level: 88,
+      icon: "fab fa-docker",
+      color: "from-blue-500 to-cyan-500",
+      items: ["Docker", "Kubernetes", "Google GKE", "Amazon EKS", "Container Registry"]
+    },
+    {
+      category: "Infrastructure as Code (IaC)",
+      description: "Terraform for automated infrastructure provisioning and management",
+      level: 92,
+      icon: "fas fa-cube",
+      color: "from-purple-500 to-pink-500",
+      items: ["Terraform", "Infrastructure Automation", "State Management", "Resource Provisioning"]
+    },
+    {
+      category: "CI/CD Tools",
+      description: "Git & GitHub version control, Jenkins automation, and continuous integration/deployment",
+      level: 90,
+      icon: "fas fa-code-branch",
+      color: "from-green-500 to-teal-500",
+      items: ["Git & GitHub", "Jenkins", "CI/CD Pipelines", "Automated Testing", "Deployment Automation"]
+    },
+    {
+      category: "Monitoring & Logging",
+      description: "Prometheus metrics collection, Grafana dashboards, and CloudWatch monitoring",
+      level: 85,
+      icon: "fas fa-chart-line",
+      color: "from-orange-500 to-red-500",
+      items: ["Prometheus", "Grafana", "CloudWatch", "Log Analysis", "Performance Monitoring"]
+    },
+    {
+      category: "AI Interest Areas",
+      description: "Cloud-based AI tools and automation integration for modern DevOps workflows",
+      level: 80,
+      icon: "fas fa-robot",
+      color: "from-indigo-500 to-purple-500",
+      items: ["Cloud AI Services", "Automation Integration", "ML Operations", "AI-Powered Monitoring"]
+    },
+    {
+      category: "Networking",
+      description: "VPC configuration, Load Balancing, DNS management, and TCP/IP networking",
+      level: 88,
+      icon: "fas fa-network-wired",
+      color: "from-cyan-500 to-blue-500",
+      items: ["VPC", "Load Balancing", "DNS", "TCP/IP", "Network Security", "Firewall Configuration"]
+    }
   ];
 
   const cloudPlatforms = [
@@ -48,130 +115,97 @@ export default function SkillsSection() {
           </p>
         </motion.div>
         
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Technical Skills */}
-          <motion.div
-            initial={{ opacity: 0, x: -50, rotateY: -15 }}
-            animate={isInView ? { opacity: 1, x: 0, rotateY: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="project-card p-8 rounded-2xl shadow-lg skill-card-3d">
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">Core Technologies</h3>
-              <div className="space-y-6">
-                {skills.map((skill, index) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                    className="skill-item"
-                  >
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-semibold text-gray-800 flex items-center">
-                        <i className={`${skill.icon} ${skill.color} mr-2`}></i>
-                        {skill.name}
-                      </span>
-                      <span className="text-blue-600 font-semibold">{skill.level}%</span>
+        <div className="space-y-8">
+          {/* Detailed Skills Grid */}
+          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6">
+            {skillCategories.map((skillGroup, index) => (
+              <motion.div
+                key={skillGroup.category}
+                initial={{ opacity: 0, y: 30, rotateX: -10 }}
+                animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="project-card p-6 rounded-2xl shadow-lg skill-card-3d"
+              >
+                <div className="flex items-center mb-4">
+                  <div className={`w-12 h-12 bg-gradient-to-r ${skillGroup.color} rounded-full flex items-center justify-center mr-4`}>
+                    <i className={`${skillGroup.icon} text-white text-xl`}></i>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-lg font-bold text-gray-900">{skillGroup.category}</h4>
+                    <div className="flex items-center mt-1">
+                      <div className="bg-gray-200 rounded-full h-2 flex-1 mr-3">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={isInView ? { width: `${skillGroup.level}%` } : {}}
+                          transition={{ duration: 1.5, delay: 0.5 + index * 0.1 }}
+                          className={`bg-gradient-to-r ${skillGroup.color} h-2 rounded-full`}
+                        />
+                      </div>
+                      <span className="text-sm font-semibold text-gray-600">{skillGroup.level}%</span>
                     </div>
-                    <div className="bg-gray-200 rounded-full h-3 overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={isInView ? { width: `${skill.level}%` } : {}}
-                        transition={{ duration: 1.5, delay: 0.6 + index * 0.1 }}
-                        className="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full"
-                      />
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-          
-          {/* Technology Stack */}
+                  </div>
+                </div>
+                
+                <p className="text-gray-700 text-sm mb-4 leading-relaxed">
+                  {skillGroup.description}
+                </p>
+                
+                <div className="space-y-2">
+                  <h5 className="text-sm font-semibold text-gray-800 mb-2">Key Technologies:</h5>
+                  <div className="flex flex-wrap gap-2">
+                    {skillGroup.items.map((item, itemIndex) => (
+                      <motion.span
+                        key={item}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                        transition={{ duration: 0.3, delay: 0.7 + index * 0.1 + itemIndex * 0.05 }}
+                        className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full font-medium"
+                      >
+                        {item}
+                      </motion.span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Soft Skills Section */}
           <motion.div
-            initial={{ opacity: 0, x: 50, rotateY: 15 }}
-            animate={isInView ? { opacity: 1, x: 0, rotateY: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            initial={{ opacity: 0, y: 30, rotateX: -10 }}
+            animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="project-card p-8 rounded-2xl shadow-lg skill-card-3d"
           >
-            <div className="project-card p-8 rounded-2xl shadow-lg skill-card-3d">
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">Technology Stack</h3>
-              
-              <div className="mb-8">
-                <h4 className="text-lg font-semibold text-gray-800 mb-4">Cloud Platforms</h4>
-                <div className="grid grid-cols-3 gap-4">
-                  {cloudPlatforms.map((platform, index) => (
-                    <motion.div
-                      key={platform.name}
-                      initial={{ opacity: 0, scale: 0.8, rotateY: -20 }}
-                      animate={isInView ? { opacity: 1, scale: 1, rotateY: 0 } : {}}
-                      transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                      whileHover={{ 
-                        scale: 1.15, 
-                        rotate: [0, 5, -5, 0],
-                        rotateX: 15,
-                        rotateY: 10,
-                        transition: { duration: 0.3 }
-                      }}
-                      className={`text-center p-4 bg-gradient-to-br ${platform.color} rounded-lg cursor-pointer tilt-3d`}
-                      style={{
-                        transformStyle: 'preserve-3d',
-                        boxShadow: '0 8px 25px rgba(0, 0, 0, 0.1)'
-                      }}
-                    >
-                      <i className={`${platform.icon} text-3xl mb-2`}></i>
-                      <p className="text-sm font-medium text-gray-700">{platform.name}</p>
-                    </motion.div>
-                  ))}
-                </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mr-4">
+                <i className="fas fa-users text-white text-xl"></i>
               </div>
-              
-              <div className="mb-8">
-                <h4 className="text-lg font-semibold text-gray-800 mb-4">DevOps Tools</h4>
-                <div className="grid grid-cols-4 gap-3">
-                  {devopsTools.map((tool, index) => (
-                    <motion.div
-                      key={tool.name}
-                      initial={{ opacity: 0, scale: 0.8, rotateX: -30 }}
-                      animate={isInView ? { opacity: 1, scale: 1, rotateX: 0 } : {}}
-                      transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                      whileHover={{ 
-                        scale: 1.2, 
-                        rotate: [0, -10, 10, 0],
-                        rotateX: 20,
-                        rotateY: 15,
-                        transition: { duration: 0.4 }
-                      }}
-                      className={`text-center p-3 bg-gradient-to-br ${tool.color} rounded-lg cursor-pointer tilt-3d`}
-                      style={{
-                        transformStyle: 'preserve-3d',
-                        boxShadow: '0 6px 20px rgba(0, 0, 0, 0.1)'
-                      }}
-                    >
-                      <i className={`${tool.icon} text-2xl mb-2`}></i>
-                      <p className="text-xs font-medium text-gray-700">{tool.name}</p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-              
-              <div>
-                <h4 className="text-lg font-semibold text-gray-800 mb-4">Programming & Scripting</h4>
-                <div className="grid grid-cols-2 gap-4">
-                  {programming.map((lang, index) => (
-                    <motion.div
-                      key={lang.name}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                      transition={{ duration: 0.4, delay: 1.0 + index * 0.1 }}
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      className={`text-center p-4 bg-gradient-to-br ${lang.color} rounded-lg cursor-pointer`}
-                    >
-                      <i className={`${lang.icon} text-3xl mb-2`}></i>
-                      <p className="text-sm font-medium text-gray-700">{lang.name}</p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
+              Soft Skills & Professional Attributes
+            </h3>
+            <p className="text-gray-700 mb-6 leading-relaxed">
+              Strong problem-solving abilities, collaborative mindset, and extensive experience working in Agile environments with modern development tools and methodologies.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { skill: "Problem Solving", icon: "fas fa-lightbulb", color: "from-yellow-400 to-orange-500" },
+                { skill: "Team Collaboration", icon: "fas fa-handshake", color: "from-blue-400 to-blue-600" },
+                { skill: "Agile Methodology", icon: "fas fa-sync-alt", color: "from-green-400 to-green-600" },
+                { skill: "Technical Communication", icon: "fas fa-comments", color: "from-purple-400 to-purple-600" }
+              ].map((softSkill, index) => (
+                <motion.div
+                  key={softSkill.skill}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
+                  className="text-center p-4 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg"
+                >
+                  <div className={`w-12 h-12 bg-gradient-to-r ${softSkill.color} rounded-full flex items-center justify-center mx-auto mb-3`}>
+                    <i className={`${softSkill.icon} text-white`}></i>
+                  </div>
+                  <p className="text-sm font-medium text-gray-800">{softSkill.skill}</p>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
