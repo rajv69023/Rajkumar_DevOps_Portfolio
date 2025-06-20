@@ -88,6 +88,32 @@ This is a modern portfolio web application for Raj Kumar, a DevOps & Cloud Engin
 - **NODE_ENV**: Environment setting (development/production)
 - **REPL_ID**: Replit-specific environment variable for development features
 
+## AWS S3 Production Deployment
+
+### Overview
+The portfolio is designed for static hosting on AWS S3 with optional CloudFront CDN. This demonstrates practical cloud infrastructure knowledge relevant to DevOps roles.
+
+### Deployment Process
+1. **Build Production Assets**: `npm run build` creates optimized static files in `dist/client`
+2. **S3 Bucket Setup**: Create bucket with static website hosting enabled
+3. **File Upload**: Sync built files and attached assets to S3
+4. **Configuration**: Set proper MIME types and caching headers
+5. **Optional CDN**: CloudFront distribution for global performance
+
+### Key Benefits
+- **Cost Effective**: S3 hosting costs ~$0.023 per GB/month
+- **Scalable**: Automatic scaling with AWS infrastructure
+- **Professional**: Demonstrates cloud deployment skills
+- **Performance**: Global CDN available with CloudFront
+
+### Security Features
+- Public read access for static files only
+- HTTPS support with CloudFront and ACM certificates
+- IAM roles with minimal required permissions
+- CloudTrail logging for access monitoring
+
+Detailed deployment instructions are available in `AWS_S3_HOSTING_GUIDE.md`.
+
 ### File Structure
 ```
 ├── client/                 # React frontend application
@@ -112,6 +138,8 @@ This is a modern portfolio web application for Raj Kumar, a DevOps & Cloud Engin
 ```
 Changelog:
 - June 20, 2025. Initial setup
+- June 20, 2025. Portfolio enhancement with LinkedIn profile picture integration
+- June 20, 2025. Added comprehensive AWS S3 hosting guide and static asset serving
 ```
 
 ## User Preferences

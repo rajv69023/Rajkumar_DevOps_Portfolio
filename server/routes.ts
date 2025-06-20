@@ -1,9 +1,19 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
+import express from "express";
 import path from "path";
 import fs from "fs";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Serve attached assets (profile picture, resume, etc.)
+  app.use("/attached_assets", (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+  
+  app.use("/attached_assets", express.static(path.join(process.cwd(), "attached_assets")));
+
   // Resume download endpoint
   app.get("/api/download-resume", (req, res) => {
     try {
