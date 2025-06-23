@@ -13,6 +13,14 @@ export default function ExperienceSection() {
       icon: "fab fa-aws",
       color: "from-orange-400 to-orange-600"
     },
+
+    {
+      name: "Python for complete beginner",
+      issuer: "Udemy, 2025",
+      icon: "fab fa-Udemy",
+      color: "from-orange-400 to-green-600"
+    },
+    
     {
       name: "Cloud & DevOps Internship Certificate",
       issuer: "CloudDevOpsHub, 2025",
@@ -109,7 +117,7 @@ export default function ExperienceSection() {
               >
                 <div className="flex items-center justify-between mb-4">
                   <h4 className="text-lg font-bold text-gray-900">Bachelor of Computer Applications (BCA)</h4>
-                  <span className="text-sm font-medium text-green-600 bg-green-50 px-3 py-1 rounded-full">4th Semester</span>
+                  <span className="text-sm font-medium text-green-600 bg-green-50 px-3 py-1 rounded-full">5th Semester</span>
                 </div>
                 <p className="text-gray-800 font-medium mb-2">Bhagwati Institute of Technology and Science, Ghaziabad</p>
                 <p className="text-gray-600">2023 - 2026</p>
