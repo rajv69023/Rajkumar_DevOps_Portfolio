@@ -17,9 +17,9 @@ export default function ExperienceSection() {
     {
       name: "Python for complete beginner",
       issuer: "Udemy, 2025",
-      icon: "fab fa-Udemy",
-      color: "from-orange-400 to-green-600"
-    },
+      icon: "fab fa-python",
+      color: "from-orange-400 to-yellow-600"
+  },
     
     {
       name: "Cloud & DevOps Internship Certificate",
