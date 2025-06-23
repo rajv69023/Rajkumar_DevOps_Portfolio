@@ -27,13 +27,16 @@ export default function ExperienceSection() {
       icon: "fas fa-cloud",
       color: "from-blue-400 to-blue-600"
     },
+
     {
       name: "Multi-Cloud with AWS + DevOps + AI",
       issuer: "CloudDevOpsHub, 2025",
       icon: "fas fa-graduation-cap",
       color: "from-purple-400 to-purple-600"
     }
+    
   ];
+
 
   return (
     <section id="experience" className="py-20 bg-white">
