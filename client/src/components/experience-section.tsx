@@ -33,7 +33,15 @@ export default function ExperienceSection() {
       issuer: "CloudDevOpsHub, 2025",
       icon: "fas fa-graduation-cap",
       color: "from-purple-400 to-purple-600"
+    },
+
+    {
+      name: "Professional Certificate in DevOps",
+      issuer: "MTF Institute of Management, Technology and Finance, 2025",
+      icon: "fas fa-infinity"
+      color: "from-blue-500 to-green-500"
     }
+
     
   ];
 

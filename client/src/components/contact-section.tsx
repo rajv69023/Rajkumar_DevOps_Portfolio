@@ -24,15 +24,15 @@ export default function ContactSection() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Here you would typically send the form data to your backend
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I will get back to you soon.",
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
-  };
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   // Here you would typically send the form data to your backend
+  //   toast({
+  //     title: "Message Sent!",
+  //     description: "Thank you for your message. I will get back to you soon.",
+  //   });
+  //   setFormData({ name: "", email: "", subject: "", message: "" });
+  // };
 
   const downloadResume = () => {
     // Trigger resume download
@@ -170,7 +170,9 @@ export default function ContactSection() {
           >
             <div className="project-card p-8 rounded-2xl bg-white text-gray-900 card-3d">
               <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form action="https://formspree.io/f/mqadjere" 
+                    method="POST" 
+                    className="space-y-6" >
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                     Full Name

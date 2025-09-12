@@ -7,18 +7,18 @@ export default function ProjectsSection() {
   const isInView = useInView(ref, { once: true });
 
   const projects = [
-    {
-      title: "Netflix Clone with EKS & DevSecOps",
-      description: "Designed and deployed a Netflix-style streaming web application with backend microservices using Amazon EKS for container orchestration. Integrated comprehensive DevSecOps practices including vulnerability scanning, secrets management, and policy enforcement.",
-      image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      features: [
-        "Scalable microservices architecture on Amazon EKS",
-        "DevSecOps integration with Trivy, Aqua, and OPA",
-        "GitOps workflows with GitHub Actions and ArgoCD",
-        "Production-ready infrastructure with CI/CD and IaC"
-      ],
-      tags: ["EKS", "DevSecOps", "ArgoCD", "GitHub Actions", "Trivy"]
-    },
+    // {
+    //   title: "Netflix Clone with EKS & DevSecOps",
+    //   description: "Designed and deployed a Netflix-style streaming web application with backend microservices using Amazon EKS for container orchestration. Integrated comprehensive DevSecOps practices including vulnerability scanning, secrets management, and policy enforcement.",
+    //   image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    //   features: [
+    //     "Scalable microservices architecture on Amazon EKS",
+    //     "DevSecOps integration with Trivy, Aqua, and OPA",
+    //     "GitOps workflows with GitHub Actions and ArgoCD",
+    //     "Production-ready infrastructure with CI/CD and IaC"
+    //   ],
+    //   tags: ["EKS", "DevSecOps", "ArgoCD", "GitHub Actions", "Trivy"]
+    // },
     {
       title: "Infrastructure Provisioning with Terraform",
       description: "Comprehensive Infrastructure as Code (IaC) implementation using Terraform to provision and manage over 40 AWS resources including EC2, VPC, ELB, Auto Scaling, RDS, and more. Demonstrates scalable, repeatable infrastructure deployment patterns.",
