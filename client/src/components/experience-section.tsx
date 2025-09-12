@@ -38,7 +38,7 @@ export default function ExperienceSection() {
     {
       name: "Professional Certificate in DevOps",
       issuer: "MTF Institute of Management, Technology and Finance, 2025",
-      icon: "fas fa-infinity"
+      icon: "fas fa-infinity",
       color: "from-blue-500 to-green-500"
     }
 
